@@ -39,7 +39,11 @@
 
         if (email === 'test@gmail.com' && password === 'test') {
           window.location.href = 'home.html';
-        } else {
+        }
+        else if (email === 'hari@gmail.com' && password === 'hari') {
+          window.location.href = 'home.html';
+        }
+         else {
           console.log('Form is not valid!');
           if (email !== 'test@gmail.com') {
             console.log('Invalid email address!');
