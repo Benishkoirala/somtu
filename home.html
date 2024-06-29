@@ -6,17 +6,19 @@
     <title>SOMTU</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      .background-image {
+      .carousel-item {
+        height: 100vh;
+        min-height: 300px;
+      }
+      .carousel-item img {
         position: absolute;
         top: 0;
         left: 0;
+        min-height: 300px;
+        height: 100vh;
         width: 100%;
-        height: 100%;
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Tribhuvan_University_of_Nepal-IMG_9531.JPG/2560px-Tribhuvan_University_of_Nepal-IMG_9531.JPG');
-        background-size: cover;
-        background-position: center;
+        object-fit: cover;
         opacity: 0.7;
-        z-index: -1;
       }
       .content {
         position: relative;
@@ -30,41 +32,70 @@
     </style>
   </head>
   <body>
-    <div class="background-image"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <img class="navbar-brand img-fluid mx-auto d-block" src="https://somtu.edu.np/img/logo/logo.png" alt="Logo" style="max-width: 200px; max-height: 100px;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="library.html">Library</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Student Info
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
+                <li><a class="dropdown-item" href="payment.html">Payment Status</a></li>
+                <li><a class="dropdown-item" href="grades.html">My Grades</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
-    <div class="content">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <img class="navbar-brand img-fluid mx-auto d-block" src="https://somtu.edu.np/img/logo/logo.png" alt="Logo" style="max-width: 200px; max-height: 100px;">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="library.html">Library</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Student Info
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="profile.html">My Profile</a></li>
-                  <li><a class="dropdown-item" href="payment.html">Payment Status</a></li>
-                  <li><a class="dropdown-item" href="grades.html">My Grades</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Tribhuvan_University_of_Nepal-IMG_9531.JPG/2560px-Tribhuvan_University_of_Nepal-IMG_9531.JPG" class="d-block w-100" alt="First slide">
+          <div class="content">
+            <h1>Welcome to SOMTU Student Portal</h1>
           </div>
         </div>
-      </nav>
+        <div class="carousel-item">
+          <img src="https://somtu.edu.np/uploads/carousel/1685856664.jpg" class="d-block w-100" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img src="https://media.edusanjal.com/__sized__/cover_photo/SOMTU-thumbnail-1400x280-70.jpg" class="d-block w-100" alt="Third slide">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="content">
       <h1>Welcome to SOMTU Student Portal</h1>
     </div>
 
